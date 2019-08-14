@@ -35,11 +35,12 @@ print(town)
 print(town.describe()) #среднее
 print(town.describe().mean)
 print(len(town[town['население'] < town.mean()['население']])/len(town)*100)
-town2 = town.iloc[2:]
+town2 = town
 print(town2.describe())
 print(len(town2[town2['население'] < town2.mean()['население']])/len(town2)*100)
 town2_log = np.log10(town2['население'])
 pd.Series(town2_log).hist()
+pd.Series(town2_log).hist(bins=60)
 # town.hist()
 # town2.hist()
 plt.show()

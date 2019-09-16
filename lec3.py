@@ -13,6 +13,7 @@ print(df.shape)
 from scipy.cluster.hierarchy import dendrogram, linkage, fcluster
 link = linkage(df, 'ward', 'euclidean') #кластерный анализ #расстояние между кластерами и #объектами
 print(link)
+fig = plt.figure(figsize=(25, 10))
 dn = dendrogram(link, orientation="right")
 
 df['cluster'] = fcluster(link, 3, criterion='distance')

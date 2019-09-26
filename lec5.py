@@ -28,6 +28,11 @@ df = pd.read_csv("./Shad_Python_06_2/Albuquerque/Albuquerque Home Prices_data.tx
 print(df.head())
 df.replace(-9999, np.nan, inplace=True)
 print(df.head())
+x=df[df['COR']==1]['PRICE']
+y=df[df['COR']==0]['PRICE']
+x.name, y.name = 'corner', 'not corner'
+
+def two_histogramms
 
 
 
